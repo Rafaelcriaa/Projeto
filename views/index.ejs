@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <%- include("partials/cabecalho.ejs") %>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div><br></div>
+    <div class="container">
+        <button class="arrow-left control" aria-label="Previous image">◀</button>
+        <button class="arrow-right control" aria-label="Next Image">▶</button>
+        <div class="gallery-wrapper">
+          <div class="gallery">
+            <img src="/igms/img1.png" alt="img1" class="item current-item">
+            <img src="/igms/img2.png" alt="img2" class="item current-item">
+            <img src="/igms/img3.png" alt="img3" class="item current-item">
+          </div>
+        </div>
+      </div>
+    
+    <script src="/js/scrypt.js"></script>
+    <%- include("partials/rodape.ejs") %>
+</body>
+</html>

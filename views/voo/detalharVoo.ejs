@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voo</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <div><a class="btn btn-primary" href="/voo">Voltar</a></div><br>
+        <div><strong> idVoo: </strong><%= voo.idVoo %></div>
+        <div><strong> Avião: </strong><%= voo.aviao %></div>
+        <div><strong> Local de saída:</strong> <%= voo.localSaida %></div>
+        <div><strong> Destino: </strong><%= voo.destino %></div>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

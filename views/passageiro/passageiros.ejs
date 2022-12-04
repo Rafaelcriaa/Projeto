@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passageiros</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <% if (salvo != undefined){ %>
+            <div class="alert alert-success" role="alert">
+                Passageiro cadastrado com sucesso!
+            </div>
+        <%}%>
+
+        <% if (atualizado != undefined){ %>
+            <div class="alert alert-info" role="alert">
+                Passageiro atualizado com sucesso!
+            </div>
+        <%}%>
+
+        <% if (deletado != undefined){ %>
+            <div class="alert alert-danger" role="alert">
+                Passageiro removido com sucesso!
+            </div>
+        <%}%>
+        <table class="table">
+            <tr>
+                <th>Nome</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+            </tr>
+            <% for(let passageiro of passageiros) {  %>
+                <tr>
+                    <td>
+                        <%= passageiro.nome%>
+                    </td>
+                   
+                    <td>
+                        <a class="btn btn-warning" href="/passageiro/<%= passageiro.email %>">Detalhar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="/passageiro/cadastrar/<%= passageiro.email %>">Atualizar</a>
+                    </td>
+                    <td>    
+                        <a class="btn btn-danger" onclick="return confirm('Confirmar remoção?')" href="/passageiro/remover/<%= passageiro.email %>">Remover</a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voos</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <% if (salvo != undefined){ %>
+            <div class="alert alert-sucess" role="alert">
+                Voo cadastrado com sucesso!
+            </div>
+        <%}%>
+        <% if (atualizado != undefined){ %>
+            <div class="alert alert-info" role="alert">
+                Voo atualizado com sucesso!
+            </div>
+        <%}%>
+        <% if (deletado != undefined){ %>
+            <div class="alert alert-danger" role="alert">
+                Voo deletado com sucesso!
+            </div>
+        <%}%>
+        <table class="table">
+            <tr>
+                <th>idVoo</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+            </tr>
+            <% for(let voo of voos) {  %>
+                <tr>
+                    <td>
+                        <%= voo.idVoo%>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" href="/voo/<%= voo.idVoo %>">Detalhar</a>
+                    </td>
+                    <td>
+                    <a class="btn btn-primary" href="/voo/cadastrar/<%= voo.idVoo %>">Atualizar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" onclick="return confirm('Confirmar remoção?')" href="/voo/remover/<%= voo.idVoo %>">Remover</a>
+                    </td>
+                    </tr>
+            <% } %>
+        </table>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

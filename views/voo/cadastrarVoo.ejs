@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Voo</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastrar Voo</h1><br>
+        <form action= "/voo" method="post">
+            <input type="hidden" name="id" value="<%= voo.id %>">
+            <div <%= escondido %> class="mb-3">
+                <label class="form-label">idVoo</label>
+                <input required type="number" value="<%= voo.idVoo%>" required class="form-control" name="idVoo">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Avião</label>
+                <input type="text" value="<%= voo.aviao %>" required class="form-control" name="aviao">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Local de Saída</label>
+                <input type="text" value="<%= voo.localSaida %>" required class="form-control" name="saida">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Destino</label>
+                <input type="text" value="<%= voo.destino %>" required class="form-control" name="destino">
+            </div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </form>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>
